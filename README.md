@@ -15,7 +15,7 @@ $3:
 $4
   - replace swipe: set to "0" if any swipes in script should be untouched or set to "1" if you want to use scriptHelper for troopbar swipes
 $5
-  - manual metadata: enter the width, height, orientation of your device manually (via stdin or following arguemnts) by passing over "1" or let the parser get the information from the script
+  - manual metadata: enter the width, height, orientation of your device manually with the following arguemnts by passing over "1" or set it to "0" to let the parser get the information out of the script
   !!!   Older script do not have the orientation contained, keep that in mind then running in server mode. Parser will just exit,if so.   !!!
 $6
   - the width of the used device screen (first number of the two you see in the script), only needed if manual metadata input
@@ -27,3 +27,5 @@ $9
   - isServer: if set to "1" parser will not ask for any user inout nor output any stdout
 ```
 So for the normal end user only the first four parameters are of importance.
+
+If there is something wrong. Script will ask for correct user input (if not in server mode)
