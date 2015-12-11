@@ -14,7 +14,7 @@ $2:
 
 
 
-Enter what troop is in what slot. Leave slots empty you dont use. See below on how to name troops
+Enter what troop is in what slot in the "slotNames.txt". Leave slots empty you dont use. See below on how to name troops:
 
 | real Name  | script name |
 | ------------- | ------------- |
