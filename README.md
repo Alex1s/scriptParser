@@ -10,7 +10,7 @@ $1:
    - input filename
 $2:
   - output filename
-$3:
+~~$3:
   - replace troop: set to "0" if you want the tapp()´s which select troops should be replaced with select(), if set to "1" tapp()´s will stay and be commented with what troop is selected by that
 $4
   - replace swipe: set to "0" if any swipes in script should be untouched or set to "1" if you want to use scriptHelper for troopbar swipes
@@ -28,4 +28,4 @@ $9
 ```
 So for the normal end user only the first four parameters are of importance.
 
-If there is something wrong. Script will ask for correct user input (if not in server mode)
+If there is something wrong. Script will ask for correct user input (if not in server mode)~~
