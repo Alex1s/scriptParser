@@ -108,5 +108,5 @@ BEGIN {
 	print($0) > "convertedScript.lua"
 }
 END {
-	print("ONE")
+	print("DONE")
 }
