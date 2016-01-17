@@ -1,5 +1,5 @@
 #made by Alex1s :)
-#version 0.5
+#version 0.7
 
 
 
@@ -267,6 +267,19 @@ function wasHeroSelected(hero, tappComment){
             }
             else{
                 kingSelected = 1
+                return 0
+            } 
+        }
+    }
+
+    if(hero == "warden"){
+        #check if king is in tapp comment
+        if(tappComment ~ /warden/){
+            if(wardenSelected == 1){
+                return 1
+            }
+            else{
+                wardenSelected = 1
                 return 0
             } 
         }
@@ -658,10 +671,10 @@ function noswipeEdit(     i) {
                 }
                 sleepSearchCount += 1
             }
-            if(usleepStorage != 0 && (tappComment == "" || wasHeroSelected("queen", tappComment) == 1 || wasHeroSelected("king", tappComment) == 1) ) {
+            if(usleepStorage != 0 && (tappComment == "" || wasHeroSelected("queen", tappComment) == 1 || wasHeroSelected("king", tappComment) == 1 || wasHeroSelected("warden", tappComment) == 1) ) {
                 $emptyLine = sprintf("usleep(%s);",  usleepStorage)
             }
-           else if(usleepStorage != 0 && (queenSelected == 1 || kingSelected == 1)) {
+           else if(usleepStorage != 0 && (queenSelected == 1 || kingSelected == 1 || wardenSelected == 1)) {
                 #its a slect put the usleep before the tapp
                 sleepSearchCount = cBlockEnd-1 
                 while( prevSleepFound != 1 && sleepSearchCount > 0 ) {
