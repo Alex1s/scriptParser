@@ -585,7 +585,7 @@ function checkBlock(     i) {
         if( isMove($i) == 1 && isTroopbar($i) == 1 ){
             return "troopbarswipe"
         }
-        else if( isMove($i) == 1 && isTroopbar != 1) {
+        else if( isMove($i) == 1 && isTroopbar($i) != 1) {
             return "swipe"
         }
     }
@@ -612,9 +612,9 @@ function troopbarswipeEdit(     comment, blockTime, i) {
             exit 1
         }
         else {
-            print "The troopbar-swipe in the block starting at line "cBlockStart" was too fast. Please adjust the timing manually."
+            print ("The troopbar-swipe in the block starting at line "cBlockStart" was too fast. Please adjust the timing manually. (remove " 1000000-blockTime ")")
+            comment = sprintf("--need to remove %s of usleep time", 1000000-blockTime);
             blockTime = 0
-            comment = "--need to remove "blockTime-1000000" of usleep time"
         }
     }
     else {
